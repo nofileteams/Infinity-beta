@@ -1,0 +1,24 @@
+{
+	"username": "unknown",
+	"logo": "@",
+	"title": "Infinity",
+	"extensions_file": "exe",
+	"execution": "python3",
+	"message": {
+		"ls_error": " is not found",
+		"cd_error": " is not found",
+		"tree": "Folder PATH listing",
+		"wrong_arg": "Invalid format",
+		"wrong_file": "The file is invalid.",
+		"wrong_file2": " is not found",
+		"python_error": "An unexpected error has occurred.",
+		"pause": "Press any key to continue . . . ",
+		"secret": "If you have time to do that, get to work!",
+		"secret2": "Thought there was something special just because the command is named '(secret)'? Sucks to be you! Nothing here! (Lmao)",
+		"grep": "But nothing happened."
+	},
+	"help": {
+		"file": "sh file",
+		"command": "command"
+	}
+}

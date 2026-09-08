@@ -1,0 +1,32 @@
+Official Website => https://terminal.nofileteams.com
+
+programming by nofileteams
+Web site by nofileteams
+Tool translation by hayato807
+
+nofileteams => https://youtube.com/@nofileteams
+hayato807 => https://youtube.com/@hayato807
+
+Conmmands---
+ls
+dir
+cls
+pause
+help
+title
+cd
+chdir
+clear
+exit
+tree
+bash
+mkdir
+./
+secret [???]
+
+Commands added by extensions---
+cat
+
+Argument---
+-f  sh file
+-c  command

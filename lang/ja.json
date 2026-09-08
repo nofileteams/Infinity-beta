@@ -1,0 +1,24 @@
+{
+	"username": "不明",
+	"logo": "@",
+	"title": "Infinity",
+	"extensions_file": "exe",
+	"execution": "python3",
+	"message": {
+		"ls_error": "が見つかりません",
+		"cd_error": "が見つかりません",
+		"tree": "フォルダー パスの一覧",
+		"wrong_arg": "無効",
+		"wrong_file": "このファイルは無効です",
+		"wrong_file2": "が見つかりません",
+		"python_error": "予想外のエラーが発生しました",
+		"pause": "続行するには何かキーを押してください . . .",
+		"secret": "そぉんなことしてないでさっさと働けッ！！",
+		"secret2": "コマンドの名前が(secret)だからって何かあると思ったの？残念ッ！！何もありません！！(大爆笑)",
+		"grep": "しかし何も起こらなかった"
+	},
+	"help": {
+		"file": "sh ファイル",
+		"command": "コマンド"
+	}
+}
