@@ -119,7 +119,7 @@ def command(cmd: str):
 			log = readchar.readchar()
 			
 		if load_cmd.startswith("./") == True:
-			arg = load_cmd.replace("./", "", 1).lstrip()
+			arg = load_cmd.replace("./", "", 1).lstrip().strip()
 			if arg != "":
 				if os.name == "nt":
 					log = os.system(arg)
@@ -128,13 +128,13 @@ def command(cmd: str):
 			
 		
 		if load_cmd.split()[0] == "title":
-			arg = load_cmd.replace(load_cmd.split()[0], "", 1).lstrip()
+			arg = load_cmd.replace(load_cmd.split()[0], "", 1).lstrip().strip()
 			sys.stdout.write(f"\x1b]2;{arg}\x07")
 			sys.stdout.flush()
 			
 		
 		if load_cmd.split()[0] == "bash":
-			arg = load_cmd.replace(load_cmd.split()[0], "", 1).lstrip()
+			arg = load_cmd.replace(load_cmd.split()[0], "", 1).lstrip().strip()
 			if arg != "":
 				if Path(arg).suffix == ".sh":
 					if Path(arg).exists() == True:
