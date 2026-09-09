@@ -135,7 +135,7 @@ def command(cmd: str):
 					print(data["message"]["wrong_file"])
 		
 		if load_cmd.split()[0] == "cd" or load_cmd.split()[0] == "chdir":
-			arg = load_cmd.replace(load_cmd.split()[0], "", 1).replace('"', '').replace("'", "").lstrip()
+			arg = load_cmd.replace(load_cmd.split()[0], "", 1).replace('"', '').replace("'", "").lstrip().strip()
 			if arg != "":
 				if os.path.exists(arg) == True:
 					os.chdir(arg)
