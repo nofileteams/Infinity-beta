@@ -234,7 +234,7 @@ if terminal_mode == True:
 			if exits == True:
 				break
 			print("")
-		except KeyboardInterrupt:
+		except (KeyboardInterrupt, EOFError):
 			if os.name == "nt":
 				print("\033[31m^C\033[0m")
 			angry_mater = angry_mater + 1
