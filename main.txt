@@ -1,1 +1,1 @@
-C:\Users\hayato\OneDrive\画像\ドキュメント\terminal
+#Pls run setup.py
