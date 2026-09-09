@@ -7,8 +7,11 @@ import platform
 import os
 import seedir as sd
 import sys
+import random
 import readchar
 from pathlib import Path
+
+log = 1
 
 main = Path("main.txt").read_text(encoding="UTF-8")
 lang = locale.getlocale()[0][:2].lower()
@@ -68,12 +71,13 @@ def command(cmd: str):
 	global counts
 	global dirs
 	global ascii_liner
+	global log
 	global commands
 	global ascii_text
 	commands = False
 	load_cmd = cmd
 	#custom
-	if load_cmd.split()[0] == "none" or load_cmd.split()[0] == "cls" or load_cmd.split()[0] == "clear" or load_cmd.split()[0] == "exit" or load_cmd.split()[0] == "ls" or load_cmd.split()[0] == "dir" or load_cmd.split()[0] == "cd" or load_cmd.split()[0] == "chdir" or load_cmd.split()[0] == "bash" or load_cmd.split()[0] == "title" or load_cmd.split()[0] == "pause" or load_cmd.split()[0] == "help" or load_cmd.startswith("./") == True or load_cmd.split()[0] == "secret" or load_cmd.split()[0] == "grep" or load_cmd.split()[0] == "tree":
+	if load_cmd.split()[0] == "none" or load_cmd.split()[0] == "cls" or load_cmd.split()[0] == "clear" or load_cmd.split()[0] == "exit" or load_cmd.split()[0] == "ls" or load_cmd.split()[0] == "dir" or load_cmd.split()[0] == "cd" or load_cmd.split()[0] == "chdir" or load_cmd.split()[0] == "bash" or load_cmd.split()[0] == "title" or load_cmd.split()[0] == "pause" or load_cmd.split()[0] == "help" or load_cmd.startswith("./") == True or load_cmd.split()[0] == "secret" or load_cmd.split()[0] == "grep" or load_cmd.split()[0] == "tree" or load_cmd.split()[0] == "echo":
 		if load_cmd.split()[0] == "cls" or load_cmd.split()[0] == "clear":
 			if os.name == "nt":
 				log = os.system("cls")
@@ -82,6 +86,10 @@ def command(cmd: str):
 		
 		if load_cmd.split()[0] == "exit":
 			exits = True
+		
+		if load_cmd.split()[0] == "echo":
+			arg = load_cmd.replace(load_cmd.split()[0], "", 1).lstrip().strip().replace("%RANDOM%", str(random.randint(1000, 9999))).replace("%ERRORLEVEL%", str(log))
+			print(arg)
 			
 		if load_cmd.split()[0] == "secret":
 			print(data["message"]["secret2"])
@@ -90,7 +98,7 @@ def command(cmd: str):
 			print(data["message"]["grep"])
 			
 		if load_cmd.split()[0] == "tree":
-			arg = load_cmd.replace(load_cmd.split()[0], "", 1).lstrip()
+			arg = load_cmd.replace(load_cmd.split()[0], "", 1).lstrip().strip()
 			counts = 0
 			if arg != "":
 				if os.path.exists(arg) == True:
