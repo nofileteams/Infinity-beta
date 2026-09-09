@@ -21,6 +21,14 @@ if Path(f"{main}/lang/{lang}.json").exists() == True:
 with open(f"{main}/config.json", "r", encoding="UTF-8") as json_file:
 	data = json.loads(json_file.read())
 
+if os.name == "nt":
+	data["logo"] = "⊞"
+else:
+	if platform.system().lower() == "darwin":
+		data["logo"] = ""
+	else:
+		data["logo"] = "@"
+
 #os.chdir("/")
 
 angry_mater = 0
@@ -146,7 +154,7 @@ def command(cmd: str):
 		
 		
 		if load_cmd.split()[0] == "ls" or load_cmd.split()[0] == "dir":
-			arg = load_cmd.replace(load_cmd.split()[0], "", 1).lstrip()
+			arg = load_cmd.replace(load_cmd.split()[0], "", 1).lstrip().strip()
 			counts = 0
 			if arg != "":
 				if os.path.exists(arg) == True:
@@ -184,7 +192,7 @@ def command(cmd: str):
 			if Path(load_cmd.split()[0]).exists() == True:
 				if commands == False:
 					commands = True
-					arg = load_cmd.replace(load_cmd.split()[0], "", 1).lstrip()
+					arg = load_cmd.replace(load_cmd.split()[0], "", 1).lstrip().strip()
 					if os.name == "nt":
 						log = os.system(f"{load_cmd.split()[0]} {arg}")
 					else:
