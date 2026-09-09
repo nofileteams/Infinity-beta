@@ -26,6 +26,7 @@ secret [???]
 
 Commands added by extensions---
 cat
+type
 
 Argument---
 -f  sh file
