@@ -235,11 +235,12 @@ if terminal_mode == True:
 				break
 			print("")
 		except KeyboardInterrupt:
-			print("\033[31m^C\033[0m")
+			if os.name == "nt":
+				print("\033[31m^C\033[0m")
 			angry_mater = angry_mater + 1
 			if angry_mater >= 87:
 				print(data["message"]["secret"])
-			print("")
+			print("\n")
 else:
 	if args.c != "none" and args.f != "none":
 		print(data["message"]["wrong_arg"])
